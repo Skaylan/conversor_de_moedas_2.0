@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/currency-exchange-110-1177167.png">
+    <title>Conversor de moedas e crypto moedas</title>
+</head>
+<body>
+    <section class="header">
+        <div class="logo">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/currency-exchange-110-1177167.png" alt="logo">
+        </div>
+    </section>
+    <section class="convertTool">
+        <div class="inputDiv">
+            <div class="optionsContainer">
+                <img id="currencyCountryImgOne" src="" alt=""/>
+                <select id="currencyCodeOne" name="currencyCodeOne" required >
+                    <option value="BRL">Real</option>
+                    <option value="USD">Dolar Americano</option>
+                    <option value="EUR">Euro</option>
+                    <option value="CAD">Dolar Canadense</option>
+                    <option value="JPY">Iene Japonês</option>
+                    <option value="CNY">Yuan Chines</option>
+                </select>
+            </div>
+            <div class="swapButton" id="swapButton">
+                <img src="https://img.icons8.com/fluency/48/undefined/change.png"/>
+            </div>
+            <div class="optionsContainer">
+                <img id="currencyCountryImgTwo" src="" alt="" />
+                <select id="currencyCodeTwo" name="currencyCodeTwo" required>
+                    <option value="USD">Dolar Americano</option>
+                    <option value="BRL">Real</option>
+                    <option value="EUR">Euro</option>
+                    <option value="CAD">Dolar Canadense</option>
+                    <option value="JPY">Iene Japonês</option>
+                    <option value="CNY">Yuan Chines</option>
+                </select>
+            </div>
+            <div class="optionsContainer">
+                <span id="displayCurencySymbol">R$</span>
+                <input type="text" id="inputValue" name="inputValue" placeholder="Digite um valor" required >
+            </div>
+        </div>
+        <div class="displayContainer">
+            <span aria-placeholder="resultado" id="display"></span>
+        </div>
+    </section>
+
+    <section class="statistics">
+        <div class="content">
+            <div class="title">
+                <h3>Valor do dolar nos ultimos 30 dias</h3>
+            </div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore molestias aspernatur pariatur quae quia quam architecto tempore voluptatum itaque, quis ex, et ipsa magnam nemo, ad voluptates alias blanditiis doloremque?</p>
+            </div>
+        </div>
+        <div class="canvas">
+            <canvas id="myChart"></canvas>
+            <!-- <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dolar</th>
+                            <th>Real</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>5000</td>
+                            <td>25000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <div class="footer-content">
+                <p>Desenvolvido por <a href="https://linkedin.com/in/lucas-gomes-oliveira" target="_blank">Lucas Oliveira</a></p>
+                <p><a href="#" target="_blank">licenças</a></p>
+            </div>
+        </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+</body>
+
+<!-- icons from https://icons8.com.br/ -->
+</html>
