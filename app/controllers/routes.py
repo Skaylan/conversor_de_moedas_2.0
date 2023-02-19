@@ -6,7 +6,7 @@ from flask_cors import CORS
 
 
 CORS(app)
-CURRENCY_CODE_SYMBOL = {'BRL': 'R$', 'USD': '$', 'EUR': '€', 'JPY': '¥', 'CNY': 'CN¥', 'CAD': 'C$'}
+CURRENCY_SYMBOL = {'BRL': 'R$', 'USD': '$', 'EUR': '€', 'JPY': '¥', 'CNY': 'CN¥', 'CAD': 'C$'}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -23,8 +23,8 @@ def handle_conversion():
         input_value = data['inputValue']
         input_value = handle_user_input(input_value)
 
-        if currency_code_two in CURRENCY_CODE_SYMBOL:
-            symbol = CURRENCY_CODE_SYMBOL[currency_code_two]
+        if currency_code_two in CURRENCY_SYMBOL:
+            symbol = CURRENCY_SYMBOL[currency_code_two]
         
         converted_currency_value = make_currency_conversion(
             currency_code_one=currency_code_one,
@@ -33,7 +33,7 @@ def handle_conversion():
         
 
         if type(converted_currency_value) == float or type(converted_currency_value) == int:
-            return jsonify({"value": f'{converted_currency_value:.2f}', "symbolOne": symbol, "symbolTwo": CURRENCY_CODE_SYMBOL[currency_code_one]})
+            return jsonify({"value": f'{converted_currency_value:.2f}', "symbolOne": symbol, "symbolTwo": CURRENCY_SYMBOL[currency_code_one]})
 
         elif 'status' in converted_currency_value.keys():
             return jsonify({"error": "conversão indisponível no momento!"})

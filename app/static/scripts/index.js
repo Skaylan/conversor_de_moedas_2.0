@@ -7,6 +7,10 @@ const swapButton = document.querySelector("#swapButton")
 const ctx = document.querySelector("#myChart").getContext('2d')
 const currencyCountryImgOne = document.querySelector("#currencyCountryImgOne")
 const currencyCountryImgTwo = document.querySelector("#currencyCountryImgTwo")
+const loader = document.querySelector('.loader')
+const leftContent = document.querySelector('.left-content')
+const rightContent = document.querySelector('.right-content')
+const tHead = document.querySelector('#thead')
 const countryFlagsByCurrencyCode = {"EUR": ["https://img.icons8.com/fluency/48/undefined/euro-pound-exchange.png", "European_union_flag"],
                                     "CNY": ["https://img.icons8.com/fluency/48/undefined/china-circular.png", "Chinese_flag"], 
                                     "CAD": ["https://img.icons8.com/fluency/48/undefined/canada-circular.png", "Canada_flag"], 
@@ -31,6 +35,7 @@ currencyCountryImgTwo.alt = countryFlagsByCurrencyCode[currencyCodeTwo.value][1]
 inputValue.addEventListener('input', () => {
     callServerDataFunction()
 })
+
 
 swapButton.addEventListener('click', () => {
     swapCurrency()
@@ -92,9 +97,7 @@ const swapCurrency = () => {
 
 const callServerDataFunction = () => {
     changeCurrencyCountryFlag(currencyCodeOne, currencyCodeTwo)
-
     inputValue.value = inputValue.value.replace(",", ".")
-
     if (inputValue.value == '') {
         display.innerHTML = "0.00"
         display.style.color = '#CAD2C5'
@@ -131,23 +134,47 @@ const callServerDataFunction = () => {
 
 }
 
+function showLoader() {
+    leftContent.style.display = 'none'
+    rightContent.style.display = 'none'
+    loader.style.visibility = 'visible'
+}
+function hideLoader() {
+    loader.style.visibility = 'hidden'
+    leftContent.style.display = 'flex'
+    rightContent.style.display = 'flex'
+}
 
 const getChartData = async () => {
+    showLoader()
     const dates = []
     const arr = []
-    const serverData = await fetch('http://localhost:5000/get_chart_data', {
+    const serverData = await fetch(' http://localhost:5000/get_chart_data', {
         method: 'GET',
         mode: 'cors',
         headers: {'Content-Type': 'application/json'}
     })
-    
+
+    hideLoader()
     const cData = await serverData.json()
+
+    const trHead = document.createElement('tr')
+    const thData = document.createElement('th')
+    const thCotacao = document.createElement('th')
+
+    thData.innerHTML = 'Data'
+    thCotacao.innerHTML = 'Cotação'
+
+    trHead.append(thData, thCotacao)
+    thead.appendChild(trHead)
+
     for (let i=0; i<7; i++) {
         const tr = document.createElement('tr')
         const tdDate = document.createElement('td')
         const tdValue = document.createElement('td')
         tdDate.innerHTML = new Date(cData.data[i].timestamp*1000).toLocaleDateString('pt-br')
-        tdValue.innerHTML = cData.data[i].bid
+        const currencyValue = cData.data[i].bid
+        tdValue.innerHTML = `R$ ${Number(currencyValue)}`
 
         tr.append(tdDate, tdValue)
         tBody.appendChild(tr)
@@ -174,6 +201,13 @@ const getChartData = async () => {
       type: 'line',
       data: data,
       options: {
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'rgb(202, 210, 197)'
+                }
+            }
+        },
         responsive: true,
         maintainAspectRatio: false,
         scales: {
@@ -191,11 +225,13 @@ const getChartData = async () => {
                 maxRotation: 0,
                 minRotation: 0,
                 maxTicksLimit: 2,
-            }
+                color: 'rgb(202, 210, 197)'
+            },
           },
           yAxis: {
             ticks: {
-                maxTicksLimit: 5
+                maxTicksLimit: 5,
+                color: 'rgb(202, 210, 197)'
             }
           },
         },

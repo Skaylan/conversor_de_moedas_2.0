@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/currency-exchange-110-1177167.png">
-    <title>Conversor de moedas e crypto moedas</title>
+    <title>Conversor de moedas | converta real para as moedas mais utilizadas no mundo</title>
 </head>
 <body>
     <section class="header">
@@ -17,7 +17,7 @@
     <section class="convertTool">
         <div class="inputDiv">
             <div class="optionsContainer">
-                <img id="currencyCountryImgOne" src="" alt=""/>
+                <img id="currencyCountryImgOne" src="" alt="logo-conversor-de-moedas.png"/>
                 <select id="currencyCodeOne" name="currencyCodeOne" required >
                     <option value="BRL">Real</option>
                     <option value="USD">Dolar Americano</option>
@@ -54,7 +54,7 @@
     <section class="statistics">
         <div class="content">
             <div class="title">
-                <h3>Valor do dolar nos ultimos 30 dias</h3>
+                <h3>Valor do dólar nos últimos 30 dias</h3>
             </div>
             <div class="text">
                 <p>O valor do dólar é determinado pela oferta e demanda no mercado cambial, que é influenciado por vários fatores, como a situação econômica do país, as políticas monetárias e fiscais do governo, as taxas de juros, os fluxos de comércio e investimento, entre outros. Quando há uma alta demanda por dólares, seu valor aumenta em relação a outras moedas, e quando há uma oferta excessiva, seu valor pode diminuir. Além disso, o dólar é considerado uma moeda de reserva global, o que significa que muitos países mantêm grandes quantidades de dólares em suas reservas internacionais. Isso também pode influenciar o valor do dólar no mercado global de câmbio.</p>
@@ -66,13 +66,10 @@
                     <canvas id="myChart"></canvas>
                 </div>
             </div>
+            <div class="loader"></div>
             <div class="right-content">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Cotação</th>
-                        </tr>
+                    <thead id="thead">
                     </thead>
                     <tbody id='tb'>
                     </tbody>
@@ -84,13 +81,13 @@
     <section class="footer">
         <footer>
             <div class="footerContent">
-                <p>Desenvolvido por <a href="https://linkedin.com/in/lucas-gomes-oliveira" target="_blank">Lucas Oliveira</a></p>
+                <p>Desenvolvido por: <a href="https://linkedin.com/in/lucas-gomes-oliveira" target="_blank">Lucas Oliveira</a></p>
+               <p>icons: <a href="https://iconscout.com/" target="_blank">iconscout</a> <a href="https://icons8.com.br" target="_blank">icons8</a></p>
             </div>
         </footer>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
-</body>
+</body> 
 
-<!-- icons from https://icons8.com.br/ -->
 </html>

@@ -5,6 +5,18 @@
   box-sizing: border-box;
   overflow-x: hidden;
 }
+*::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 10px;
+  width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 
 body {
   background: #2F3E46;
@@ -117,7 +129,7 @@ body {
   height: 50px;
   font-size: 2rem;
   text-align: center;
-  color: #CAD2C5;
+  color: #cad2c5;
   border: none;
   border-bottom: 1px solid #cfcfcf;
 }
@@ -145,16 +157,26 @@ body {
   gap: 1rem;
   padding: 1rem;
   text-align: center;
-  color: #CAD2C5;
+  color: #cad2c5;
 }
 .statistics .content .text {
-  text-align: justify;
+  text-align: center;
 }
 .statistics .bottom-content {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: nowrap;
+}
+.statistics .bottom-content .loader {
+  visibility: hidden;
+  border: 7px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 7px solid #4b20c2;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 0.5s linear infinite;
+          animation: spin 0.5s linear infinite;
 }
 .statistics .bottom-content .left-content {
   width: 100%;
@@ -187,14 +209,14 @@ body {
   align-items: center;
   padding: 5px;
   background: #2F3E46;
-  color: #CAD2C5;
+  color: #cad2c5;
 }
 .statistics .bottom-content .right-content table td {
-  border: 1px solid #CAD2C5;
+  border: 1px solid #cad2c5;
   text-align: center;
   padding: 5px;
   background: #2F3E46;
-  color: #CAD2C5;
+  color: #cad2c5;
 }
 
 .footer footer .footerContent {
@@ -203,10 +225,10 @@ body {
   justify-content: center;
 }
 .footer footer .footerContent a {
-  color: #CAD2C5;
+  color: #cad2c5;
 }
 .footer footer .footerContent p {
-  color: #CAD2C5;
+  color: #cad2c5;
 }
 
 @media (max-width: 1020px) {
@@ -231,6 +253,17 @@ body {
   .displaySection {
     text-align: center;
   }
+  .statistics .content .text {
+    text-align: justify;
+  }
+  .logo {
+    align-items: center;
+  }
+}
+@media (max-width: 665px) {
+  .inputDiv {
+    flex-direction: column;
+  }
 }
 @media (max-width: 530px) {
   .statistics .canvas {
@@ -240,5 +273,21 @@ body {
 @media (max-width: 420px) {
   .statistics .canvas {
     width: 300px;
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=styles.css.map */

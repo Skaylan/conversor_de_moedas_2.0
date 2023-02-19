@@ -1,14 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-$text_color: #CAD2C5;
+$text_color: #cad2c5;
+
+@mixin custom-scroll-bar() {
+    &::-webkit-scrollbar {
+      border-radius: 10px;
+      height: 10px;
+      width: 8px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: #999;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+  }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    @include custom-scroll-bar()
+
 }
+
 
 body {
     background: #2F3E46;
@@ -160,7 +180,7 @@ body {
         color: $text_color;
         
         .text {
-            text-align: justify;
+            text-align: center;
         }
     }
 
@@ -169,6 +189,16 @@ body {
         align-items: center;
         justify-content: space-around;
         flex-wrap: nowrap;
+        
+        .loader {
+            visibility: hidden;
+            border: 7px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 7px solid #4b20c2;
+            width: 40px;
+            height: 40px;
+            animation: spin .5s linear infinite;
+        }
 
         .left-content {
             width: 100%;
@@ -262,6 +292,23 @@ body {
     .displaySection {
         text-align: center;
     }
+
+    .statistics {
+        .content {
+            .text {
+                text-align: justify;
+            }
+        }
+    }
+
+    .logo {
+        align-items: center;
+    }
+}
+@media (max-width: 665px) {
+    .inputDiv {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 530px) {
@@ -278,4 +325,10 @@ body {
             width: 300px;
         }
     }
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+
 }
