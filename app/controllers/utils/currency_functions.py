@@ -17,7 +17,7 @@ def get_currency_info(currency_code_one: str, currency_code_two: str):
         return float(currency)
 
 
-def make_currency_conversion(currency_code_one: str, currency_code_two: str, value_to_convert: float) -> float|dict:
+def make_currency_conversion(currency_code_one: str, currency_code_two: str, value_to_convert: float):
     currency = get_currency_info(currency_code_one=currency_code_one, currency_code_two=currency_code_two)  
     if type(currency) == float or type(currency) == int:
         if currency_code_one == 'JPY' and currency_code_two in ['USD', 'CAD', 'EUR']:
