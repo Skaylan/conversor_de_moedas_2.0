@@ -7,7 +7,7 @@ load_dotenv()
 API_URL = getenv('API_URL')
 
 
-def get_currency_info(currency_code_one: str, currency_code_two: str) -> float|dict:
+def get_currency_info(currency_code_one: str, currency_code_two: str):
     currency = requests.get(API_URL + f'{currency_code_one}-{currency_code_two}')
     currency = currency.json()
     if 'status' in currency.keys():
