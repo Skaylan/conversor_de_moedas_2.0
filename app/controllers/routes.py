@@ -1,7 +1,7 @@
 from app import app
 from flask import jsonify, render_template, request
 from app.controllers.utils.currency_functions import make_currency_conversion
-from app.controllers.utils.functions import get_data_from_api, handle_user_input
+from app.controllers.utils.functions import fetch_chart_api_data, handle_user_input
 from flask_cors import CORS
 
 
@@ -41,5 +41,5 @@ def handle_conversion():
 
 @app.route('/get_chart_data')
 def get_chart_data():
-    data = get_data_from_api()
+    data = fetch_chart_api_data()
     return jsonify({'data': data})

@@ -16,7 +16,7 @@ def handle_user_input(user_input: str) -> float:
     return float(new_user_input)
 
 
-def get_data_from_api():
+def fetch_chart_api_data():
         response = requests.get(getenv('CHART_URL'))
         data = response.json()
         return data
