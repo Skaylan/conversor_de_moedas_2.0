@@ -24,7 +24,7 @@
                     <option value="EUR">Euro</option>
                     <option value="CAD">Dolar Canadense</option>
                     <option value="JPY">Iene Japonês</option>
-                    <option value="CNY">Yuan Chines</option>
+                    <option value="CNY">Yuan Chines (Renminbi)</option>
                 </select>
             </div>
             <div class="swapButton" id="swapButton">
@@ -38,7 +38,7 @@
                     <option value="EUR">Euro</option>
                     <option value="CAD">Dolar Canadense</option>
                     <option value="JPY">Iene Japonês</option>
-                    <option value="CNY">Yuan Chines</option>
+                    <option value="CNY">Yuan Chines (Renminbi)</option>
                 </select>
             </div>
             <div class="optionsContainer">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="displayContainer">
-            <span aria-placeholder="resultado" id="display"></span>
+            <span aria-placeholder="resultado" id="display">0.00</span>
         </div>
     </section>
 
@@ -57,51 +57,34 @@
                 <h3>Valor do dolar nos ultimos 30 dias</h3>
             </div>
             <div class="text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore molestias aspernatur pariatur quae quia quam architecto tempore voluptatum itaque, quis ex, et ipsa magnam nemo, ad voluptates alias blanditiis doloremque?</p>
+                <p>O valor do dólar é determinado pela oferta e demanda no mercado cambial, que é influenciado por vários fatores, como a situação econômica do país, as políticas monetárias e fiscais do governo, as taxas de juros, os fluxos de comércio e investimento, entre outros. Quando há uma alta demanda por dólares, seu valor aumenta em relação a outras moedas, e quando há uma oferta excessiva, seu valor pode diminuir. Além disso, o dólar é considerado uma moeda de reserva global, o que significa que muitos países mantêm grandes quantidades de dólares em suas reservas internacionais. Isso também pode influenciar o valor do dólar no mercado global de câmbio.</p>
             </div>
         </div>
-        <div class="canvas">
-            <canvas id="myChart"></canvas>
-            <!-- <div class="table">
+        <div class="bottom-content">
+            <div class="left-content">
+                <div class="canvas">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="right-content">
                 <table>
                     <thead>
                         <tr>
-                            <th>Dolar</th>
-                            <th>Real</th>
+                            <th>Data</th>
+                            <th>Cotação</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>100</td>
-                            <td>500</td>
-                        </tr>
-                        <tr>
-                            <td>1000</td>
-                            <td>5000</td>
-                        </tr>
-                        <tr>
-                            <td>5000</td>
-                            <td>25000</td>
-                        </tr>
+                    <tbody id='tb'>
                     </tbody>
                 </table>
-            </div> -->
+            </div>
         </div>
     </section>
 
     <section class="footer">
         <footer>
-            <div class="footer-content">
+            <div class="footerContent">
                 <p>Desenvolvido por <a href="https://linkedin.com/in/lucas-gomes-oliveira" target="_blank">Lucas Oliveira</a></p>
-                <p><a href="#" target="_blank">licenças</a></p>
             </div>
         </footer>
     </section>

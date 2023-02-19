@@ -22,7 +22,6 @@ def handle_conversion():
         currency_code_two = data['currencyCodeTwo']
         input_value = data['inputValue']
         input_value = handle_user_input(input_value)
-        print('working')
 
         if currency_code_two in CURRENCY_CODE_SYMBOL:
             symbol = CURRENCY_CODE_SYMBOL[currency_code_two]
