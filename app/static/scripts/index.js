@@ -56,7 +56,7 @@ const getServerData = async (currencyCodeOne, currencyCodeTwo, inputValue) => {
         	                    "currencyCodeTwo": currencyCodeTwo, 
                                 "inputValue": inputValue}
 
-    const request = await fetch("http://localhost:5000/handle_conversion", {
+    const request = await fetch("https://conversordemoedas.onrender.com/handle_conversion", {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -149,7 +149,7 @@ const getChartData = async () => {
     showLoader()
     const dates = []
     const arr = []
-    const serverData = await fetch(' http://localhost:5000/get_chart_data', {
+    const serverData = await fetch(' https://conversordemoedas.onrender.com/get_chart_data', {
         method: 'GET',
         mode: 'cors',
         headers: {'Content-Type': 'application/json'}
