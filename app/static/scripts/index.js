@@ -31,9 +31,14 @@ currencyCountryImgOne.alt = countryFlagsByCurrencyCode[currencyCodeOne.value][1]
 currencyCountryImgTwo.src = countryFlagsByCurrencyCode[currencyCodeTwo.value][0]
 currencyCountryImgTwo.alt = countryFlagsByCurrencyCode[currencyCodeTwo.value][1]
 
+let timeout = null;
 
 inputValue.addEventListener('input', () => {
-    callServerDataFunction()
+    clearTimeout(timeout)
+
+    setTimeout(() => {
+        callServerData()
+    }, 100)
 })
 
 
@@ -43,11 +48,11 @@ swapButton.addEventListener('click', () => {
 
 currencyCodeOne.addEventListener('change', () => {
     changeCurrencyCountryFlag()
-    callServerDataFunction()
+    callServerData()
 })
 currencyCodeTwo.addEventListener('change', () => {
     changeCurrencyCountryFlag()
-    callServerDataFunction()
+    callServerData()
 })
 
 const getServerData = async (currencyCodeOne, currencyCodeTwo, inputValue) => {
@@ -90,12 +95,12 @@ const swapCurrency = () => {
     currencyCodeTwo.value = aux
 
     changeCurrencyCountryFlag()
-    callServerDataFunction()
+    callServerData()
 
 }
 
 
-const callServerDataFunction = () => {
+const callServerData = () => {
     changeCurrencyCountryFlag(currencyCodeOne, currencyCodeTwo)
     inputValue.value = inputValue.value.replace(",", ".")
     if (inputValue.value == '') {
