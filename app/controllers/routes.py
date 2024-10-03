@@ -10,6 +10,7 @@ CURRENCY_SYMBOL = {'BRL': 'R$', 'USD': '$', 'EUR': '€', 'JPY': '¥', 'CNY': 'C
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    print("Visitor IP address:", request.remote_addr)
     return render_template('index.html')
 
 
