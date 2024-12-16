@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversor de moedas, com as principais moedas do mundo.">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/currency-exchange-110-1177167.png">
     <title>Conversor de moedas | converta real para as moedas mais utilizadas no mundo</title>
@@ -17,7 +18,8 @@
     <section class="convertTool">
         <div class="inputDiv">
             <div class="optionsContainer">
-                <img id="currencyCountryImgOne" src="" alt="logo-conversor-de-moedas.png"/>
+                <label for="currencyCodeOne"></label>
+                <img id="currencyCountryImgOne" src="" alt="icone-da-moda-de-origem"/>
                 <select id="currencyCodeOne" name="currencyCodeOne" required >
                     <option value="BRL">Real</option>
                     <option value="USD">Dolar Americano</option>
@@ -28,10 +30,11 @@
                 </select>
             </div>
             <div class="swapButton" id="swapButton">
-                <img src="https://img.icons8.com/fluency/48/undefined/change.png"/>
+                <img src="https://img.icons8.com/fluency/48/undefined/change.png" alt="icone-de-troca-de-conversao"/>
             </div>
             <div class="optionsContainer">
-                <img id="currencyCountryImgTwo" src="" alt="" />
+                <label for="currencyCodeTwo"></label>
+                <img id="currencyCountryImgTwo" src="" alt="icone-da-moda-de-destino" />
                 <select id="currencyCodeTwo" name="currencyCodeTwo" required>
                     <option value="USD">Dolar Americano</option>
                     <option value="BRL">Real</option>
@@ -47,7 +50,7 @@
             </div>
         </div>
         <div class="displayContainer">
-            <span aria-placeholder="resultado" id="display">0.00</span>
+            <span role="textbox" aria-label="Resultado da conversão"  id="display">0.00</span>
         </div>
     </section>
 
