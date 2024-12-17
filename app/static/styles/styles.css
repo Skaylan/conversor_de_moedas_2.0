@@ -1,45 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@font-face {
+  font-family: 'Roboto';
+  src: url("static/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-x: hidden;
 }
+
 *::-webkit-scrollbar {
   border-radius: 10px;
   height: 10px;
   width: 8px;
 }
+
 *::-webkit-scrollbar-thumb {
   background: #999;
   border-radius: 10px;
 }
+
 *::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
 body {
   background: #2F3E46;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1rem;
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 200px;
   height: 200px;
 }
+
 .header .logo img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -48,126 +80,198 @@ body {
 }
 
 .convertTool {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1rem;
 }
+
 .convertTool .inputDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: .5rem;
   width: 100vw;
 }
+
 .convertTool .inputDiv .swapButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50px;
   height: 50px;
   cursor: pointer;
 }
+
 .convertTool .inputDiv .optionsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 300px;
   height: 50px;
   border-radius: 5px;
   background: #CAD2C5;
 }
+
 .convertTool .inputDiv select {
   width: 250px;
   height: 50px;
   border: none;
   border-radius: 5px;
-  outline: none;
   font-size: 1.2rem;
   cursor: pointer;
   background: #CAD2C5;
 }
+
 .convertTool .inputDiv #inputValue {
   width: 250px;
   height: 50px;
   outline: none;
   border: none;
   border-radius: 5px;
-  outline: none;
   background: #CAD2C5;
   font-size: 1.7rem;
   font-weight: bold;
 }
-.convertTool .inputDiv #inputValue::-moz-placeholder {
+
+.convertTool .inputDiv #inputValue::-webkit-input-placeholder {
   font-size: large;
-  padding: 0.5rem;
+  padding: .5rem;
 }
+
 .convertTool .inputDiv #inputValue:-ms-input-placeholder {
   font-size: large;
-  padding: 0.5rem;
+  padding: .5rem;
 }
+
+.convertTool .inputDiv #inputValue::-ms-input-placeholder {
+  font-size: large;
+  padding: .5rem;
+}
+
 .convertTool .inputDiv #inputValue::placeholder {
   font-size: large;
-  padding: 0.5rem;
+  padding: .5rem;
 }
+
 .convertTool .inputDiv #displayCurencySymbol {
   font-size: 1.7rem;
   font-weight: bold;
 }
+
 .convertTool .inputDiv button {
   width: 100px;
   height: 35px;
   cursor: pointer;
 }
+
 .convertTool .displayContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1rem;
   min-width: 300px;
   height: 50px;
   font-size: 2rem;
   text-align: center;
-  color: #cad2c5;
+  color: #ffffff;
   border: none;
   border-bottom: 1px solid #cfcfcf;
 }
+
 .convertTool .error {
   color: red;
   font-size: 1.2rem;
 }
+
 .convertTool .warning {
   font-size: 1.5rem;
 }
 
 .statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .statistics .canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 500px;
   height: 250px;
 }
+
 .statistics .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   text-align: center;
-  color: #cad2c5;
+  color: #ffffff;
 }
+
 .statistics .content .text {
   text-align: center;
 }
+
 .statistics .bottom-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
+
 .statistics .bottom-content .loader {
   visibility: hidden;
   border: 7px solid #f3f3f3;
@@ -175,80 +279,124 @@ body {
   border-top: 7px solid #4b20c2;
   width: 40px;
   height: 40px;
-  -webkit-animation: spin 0.5s linear infinite;
-          animation: spin 0.5s linear infinite;
+  -webkit-animation: spin .5s linear infinite;
+          animation: spin .5s linear infinite;
 }
+
 .statistics .bottom-content .left-content {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .statistics .bottom-content .right-content {
   width: 100%;
 }
+
 .statistics .bottom-content .right-content table {
   width: 80%;
   border: 1px solid #b3adad;
   border-collapse: collapse;
   padding: 5px;
 }
+
 .statistics .bottom-content .right-content table th {
   width: 50%;
   border: 1px solid #b3adad;
   padding: 5px;
   background: #f0f0f0;
   color: #313030;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
+
 .statistics .bottom-content .right-content table th {
   border: 1px solid #b3adad;
   text-align: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5px;
   background: #2F3E46;
-  color: #cad2c5;
+  color: #ffffff;
 }
+
 .statistics .bottom-content .right-content table td {
-  border: 1px solid #cad2c5;
+  border: 1px solid #ffffff;
   text-align: center;
   padding: 5px;
   background: #2F3E46;
-  color: #cad2c5;
+  color: #ffffff;
 }
 
 .footer footer .footerContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .footer footer .footerContent a {
-  color: #cad2c5;
+  color: #ffffff;
 }
+
 .footer footer .footerContent p {
-  color: #cad2c5;
+  color: #ffffff;
 }
 
 @media (max-width: 1020px) {
   .bottom-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .bottom-content .right-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .bottom-content .left-content {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
 @media (max-width: 700px) {
   .displaySection {
     text-align: center;
@@ -257,37 +405,52 @@ body {
     text-align: justify;
   }
   .logo {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
+
 @media (max-width: 665px) {
   .inputDiv {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
+
 @media (max-width: 530px) {
   .statistics .canvas {
     width: 400px;
   }
 }
+
 @media (max-width: 420px) {
   .statistics .canvas {
     width: 300px;
   }
 }
+
 @-webkit-keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */
