@@ -57,7 +57,7 @@ const hideLoader = () => {
 // API
 const getServerData = async (currencyCodeOne, currencyCodeTwo, inputValue) => {
   const payload = { currencyCodeOne, currencyCodeTwo, inputValue };
-  const response = await fetch("http://127.0.0.1:5000/handle_conversion", {
+  const response = await fetch("https://conversordemoedas.onrender.com/handle_conversion", {
     method: 'POST',
     mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
@@ -114,7 +114,7 @@ const swapCurrency = () => {
 // Gráfico
 const getChartData = async () => {
   showLoader();
-  const response = await fetch('http://localhost:5000/get_chart_data');
+  const response = await fetch('https://conversordemoedas.onrender.com/get_chart_data');
   const cData = await response.json();
   hideLoader();
 
