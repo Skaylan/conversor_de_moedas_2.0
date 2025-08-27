@@ -5,20 +5,21 @@ import requests
 
 load_dotenv()
 API_URL = getenv('API_URL')
-
+API_KEY = getenv('API_KEY')
 
 def get_currency_info(currency_code_one: str, currency_code_two: str):
-    currency = requests.get(API_URL + f'{currency_code_one}-{currency_code_two}')
+    currency = requests.get(API_URL + f'{currency_code_one}-{currency_code_two}/?token={API_KEY}')
     currency = currency.json()
+
     if 'status' in currency.keys():
         return currency
     else:
-        currency = currency[currency_code_one]['bid']
+        currency = currency[currency_code_one+currency_code_two]['bid']
         return float(currency)
 
 
 def make_currency_conversion(currency_code_one: str, currency_code_two: str, value_to_convert: float):
-    currency = get_currency_info(currency_code_one=currency_code_one, currency_code_two=currency_code_two)  
+    currency = get_currency_info(currency_code_one=currency_code_one, currency_code_two=currency_code_two)
     if type(currency) == float or type(currency) == int:
         if currency_code_one == 'JPY' and currency_code_two in ['USD', 'CAD', 'EUR']:
             final_value = (value_to_convert * currency) * .010

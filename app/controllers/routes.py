@@ -26,12 +26,12 @@ def handle_conversion():
 
         if currency_code_two in CURRENCY_SYMBOL:
             symbol = CURRENCY_SYMBOL[currency_code_two]
-        
+
         converted_currency_value = make_currency_conversion(
             currency_code_one=currency_code_one,
             currency_code_two=currency_code_two,
             value_to_convert=input_value)
-        
+
 
         if type(converted_currency_value) == float or type(converted_currency_value) == int:
             return jsonify({"value": f'{converted_currency_value:.2f}', "symbolOne": symbol, "symbolTwo": CURRENCY_SYMBOL[currency_code_one]})
@@ -44,3 +44,9 @@ def handle_conversion():
 def get_chart_data():
     data = fetch_chart_api_data()
     return jsonify({'data': data})
+
+
+
+@app.get('/health_check')
+def health_check():
+    return jsonify({'status': 'ok'})
